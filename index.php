@@ -28,12 +28,15 @@ $content = curl_exec($ch);
 echo $content;
 //skyscanner
 
-if($message == "Selam")
+if($message == "Selam"){
  $message_to_reply = 'Selammmmm';
-elseif ($str == '22.06.2017, IST -> ESB, 2 adults')
+}
+elseif ($str == '22.06.2017, IST -> ESB, 2 adults'){
  $message_to_reply = $message;
-else
+}
+else{
   $message_to_reply = 'Olmadı yar.';
+}
 $json = file_get_contents('http://partners.api.skyscanner.net/apiservices/browsequotes/v1.0/TR/try/en-US/ISTA-sky/ADB-sky/2017-04-12/2017-04-19?apikey=prtl6749387986743898559646983194');
 
 $obj = json_decode($json);
