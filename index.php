@@ -28,10 +28,9 @@ curl_setopt($ch, CURLOPT_URL,$url);
 $content = curl_exec($ch);
 echo $content;
 
+echo strlen($content);
+
 $obj = json_decode($content);
-//echo $obj->Quotes[0]->MinPrice;
-//echo $json;
-//$printObj =  $obj->Quotes[0]->MinPrice;
 
 $printObj = 'The flight choosen for you: \n';
 $printObj = 'Departure Airport: ' .$obj->Places[1]->Name . '\n';
