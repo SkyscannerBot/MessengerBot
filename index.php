@@ -19,7 +19,7 @@ $str = '22.06.2017, IST -> ESB, 2 adults';
 $sentences = preg_split("/[\s,]+/", $str);
 
 $sentences2 = preg_split("/[\s.]+/", $sentences[0]);
-
+echo $sentences2;
 $url = 'http://partners.api.skyscanner.net/apiservices/browsequotes/v1.0/Tr/Try/en-US/'.$sentences[1].'/'.$sentences[3].'/'.$sentences2[2].'-'.$sentences2[1].'-'.$sentences2[0].'?apikey=prtl6749387986743898559646983194';
 
 $ch = curl_init();
