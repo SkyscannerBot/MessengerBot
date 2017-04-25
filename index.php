@@ -14,12 +14,12 @@ $message = $input['entry'][0]['messaging'][0]['message']['text'];
 $message_to_reply = ' ';
 
 //skyscanner
-//$str = '22.06.2017, IST -> ESB, 2 adults';
+$str = '22.06.2017, IST -> ESB, 2 adults';
 
-$sentences = preg_split("/[\s,]+/", $message);
+$sentences = preg_split("/[\s,]+/", $str);
 
 $sentences2 = preg_split("/[\s.]+/", $sentences[0]);
-
+echo $sentences[0] .' '. $sentences[1] .' ' .$sentences[2] .' ' .$sentences[3] .' ' .$sentences[4];
 $url = 'http://partners.api.skyscanner.net/apiservices/browsequotes/v1.0/Tr/Try/en-US/'.$sentences[1].'/'.$sentences[3].'/'.$sentences2[2].'-'.$sentences2[1].'-'.$sentences2[0].'?apikey=prtl6749387986743898559646983194';
 
 $ch = curl_init();
