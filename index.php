@@ -15,8 +15,8 @@ $message_to_reply = ' ';
 
 //skyscanner
 $str = '22.06.2017, IST -> ESB, 2 adults';
-
-$sentences = preg_split("/[\s,]+/", $str);
+$str2 = 'asda';
+$sentences = preg_split("/[\s,]+/", $str2);
 
 $sentences2 = preg_split("/[\s.]+/", $sentences[0]);
 
