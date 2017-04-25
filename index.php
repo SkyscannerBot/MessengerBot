@@ -26,7 +26,6 @@ $ch = curl_init();
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 curl_setopt($ch, CURLOPT_URL,$url);
 $content = curl_exec($ch);
-echo $content;
 
 $obj = json_decode($content);
 
