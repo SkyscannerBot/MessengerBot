@@ -30,12 +30,11 @@ $content = curl_exec($ch);
 $obj = json_decode($content);
 
 $printObj = 'The flight choosen for you:\n';
-$printObj .= 'Departure Airport: ' .$obj->Places[1]->Name . '\n';
-$printObj .= 'Arrival Airport: ' .$obj->Places[0]->Name . '\n';
+$printObj .= 'Departure Airport: ' .$obj->Places[0]->Name . '\n';
+$printObj .= 'Arrival Airport: ' .$obj->Places[1]->Name . '\n';
 $printObj .= 'Date: ' .strtok($obj->Quotes[0]->OutboundLeg->DepartureDate , 'T') . '\n';
 $floatPrice = $obj->Quotes[0]->MinPrice * (int)$sentences[4];
 $printObj .= 'Price for ' .$sentences[4] .' people: ' .$floatPrice . ' ' .$obj->Currencies[0]->Code . '\n';
-$printObj .= 'Arrival Airport: ' .$obj->Places[0]->Name . '\n';
 $printObj .= 'Carrier: ' .$obj->Carriers[0]->Name . '\n';
 
 //skyscanner
