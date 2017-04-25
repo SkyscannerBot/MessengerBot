@@ -31,7 +31,7 @@ echo $content;
 if($message == "Selam"){
  $message_to_reply = 'Selammmmm';
 }
-elseif ($str == '22.06.2017, IST -> ESB, 2 adults'){
+elseif ($message == '22.06.2017, IST -> ESB, 2 adults'){
  $message_to_reply = $message;
 }
 else{
