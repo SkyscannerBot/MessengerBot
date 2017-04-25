@@ -29,12 +29,11 @@ $content = curl_exec($ch);
 echo $content;
 
 $obj = json_decode($content);
-echo $obj->Quotes[0]->QuoteId;
+echo $obj->Quotes;
 //echo $json;
 
 
 //skyscanner
-echo 'selam';
 if($message == "Deneme"){
  $message_to_reply = 'Deneme başarılı.';
 }
