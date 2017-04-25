@@ -39,24 +39,16 @@ $printObj .= 'Price: ' .$floatPrice . ' ' .$obj->Currencies[0]->Code . '\n';
 $printObj .= 'Arrival Airport: ' .$obj->Places[0]->Name . '\n';
 $printObj .= 'Carrier: ' .$obj->Carriers[0]->Name . '\n';
 
-
 //skyscanner
 if($message == "Hello" || $message == "Hi"||$message == "hi" ||$message == "hello"){
  $message_to_reply = 'Hi. \nFor querying flights the format has to be like :\n22.06.2017, IST -> ESB, 2 adults';
 }
-elseif(strlen($content) != 0){
+elseif($obj->Quotes[0]->MinPrice > 0){
   $message_to_reply = $printObj;
 }
 else{
   $message_to_reply = 'Format error.\nFor querying flights the format has to be like :\n22.06.2017, IST -> ESB, 2 adults';
 }
-
-
-//$json = file_get_contents('http://partners.api.skyscanner.net/apiservices/browsequotes/v1.0/TR/try/en-US/ISTA-sky/ADB-sky/2017-04-12/2017-04-19?apikey=prtl6749387986743898559646983194');
-
-//$obj = json_decode($json);
-//echo $obj->Quotes[0]->QuoteId;
-//echo $json;
 
 //API Url
 $url = 'https://graph.facebook.com/v2.6/me/messages?access_token='.$access_token;
