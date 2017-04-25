@@ -28,21 +28,21 @@ curl_setopt($ch, CURLOPT_URL,$url);
 $content = curl_exec($ch);
 echo $content;
 //skyscanner
-$decodedJson = json_decode($content);
-echo $decodedJson;
-//echo $decodedJson->{'Quotes'};
+echo 'selam';
 if($message == "Deneme"){
  $message_to_reply = 'Deneme başarılı.';
 }
 else{
-  $message_to_reply = $decodedJson;
+  $message_to_reply = $content;
 }
-$json = file_get_contents('http://partners.api.skyscanner.net/apiservices/browsequotes/v1.0/TR/try/en-US/ISTA-sky/ADB-sky/2017-04-12/2017-04-19?apikey=prtl6749387986743898559646983194');
 
-$obj = json_decode($json);
+
+//$json = file_get_contents('http://partners.api.skyscanner.net/apiservices/browsequotes/v1.0/TR/try/en-US/ISTA-sky/ADB-sky/2017-04-12/2017-04-19?apikey=prtl6749387986743898559646983194');
+
+//$obj = json_decode($json);
 //echo $obj->Quotes[0]->QuoteId;
+//echo $json;
 
-echo $json;
 //API Url
 $url = 'https://graph.facebook.com/v2.6/me/messages?access_token='.$access_token;
 //Initiate cURL.
