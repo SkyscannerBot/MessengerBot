@@ -33,7 +33,7 @@ if($message == "Deneme"){
  $message_to_reply = 'Deneme başarılı.';
 }
 else{
-  $message_to_reply = $content;
+  $message_to_reply = $sentences2;
 }
 $json = file_get_contents('http://partners.api.skyscanner.net/apiservices/browsequotes/v1.0/TR/try/en-US/ISTA-sky/ADB-sky/2017-04-12/2017-04-19?apikey=prtl6749387986743898559646983194');
 
