@@ -32,7 +32,7 @@ $obj = json_decode($content);
 //echo $obj->Quotes[0]->MinPrice;
 //echo $json;
 //$printObj =  $obj->Quotes[0]->MinPrice;
-$printObj = 'Departure Airport: ' .$obj->Places[1]->Name;
+$printObj = 'Departure Airport: ' .$obj->Places[1]->Name . '\n asdasdasdsdsad';
 //skyscanner
 if($message == "Deneme"){
  $message_to_reply = 'Deneme başarılı.';
