@@ -32,7 +32,7 @@ echo $sentences[2];
 
 
 $printObj = 'The flight choosen for you:\n';
-if($obj->Places[0]->IataCode == $sentences[2]){
+if($obj->Places[0]->IataCode == $sentences[1]){
 $printObj .= 'Departure Airport: ' .$obj->Places[0]->Name . '\n';
 $printObj .= 'Arrival Airport: ' .$obj->Places[1]->Name . '\n';
 }
