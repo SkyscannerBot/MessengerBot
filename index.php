@@ -14,9 +14,9 @@ $message = $input['entry'][0]['messaging'][0]['message']['text'];
 $message_to_reply = ' ';
 
 //skyscanner
-$str = '22.06.2017, IST -> ESB, 2 adults';
-$str2 = 'asda';
-$sentences = preg_split("/[\s,]+/", $str2);
+//$str = '22.06.2017, IST -> ESB, 2 adults';
+
+$sentences = preg_split("/[\s,]+/", $message);
 
 $sentences2 = preg_split("/[\s.]+/", $sentences[0]);
 
