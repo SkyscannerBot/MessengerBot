@@ -16,7 +16,7 @@ $message_to_reply = ' ';
 //skyscanner
 $str = '22.06.2017, IST -> ESB, 2 adults';
 
-$sentences = preg_split("/[\s,]+/", $str);
+$sentences = preg_split("/[\s,]+/", $message);
 
 $sentences2 = preg_split("/[\s.]+/", $sentences[0]);
 
@@ -31,14 +31,14 @@ echo $content;
 $obj = json_decode($content);
 echo $obj->Quotes[0]->MinPrice;
 //echo $json;
-
+$printObj =  $obj->Quotes[0]->MinPrice;
 
 //skyscanner
 if($message == "Deneme"){
  $message_to_reply = 'Deneme başarılı.';
 }
 else{
-  $message_to_reply = $content;
+  $message_to_reply = $printObj;
 }
 
 
