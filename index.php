@@ -28,7 +28,7 @@ curl_setopt($ch, CURLOPT_URL,$url);
 $content = curl_exec($ch);
 echo $content;
 $obj = json_decode($content);
-echo $sentences[2];
+echo $sentences[1];
 
 
 $printObj = 'The flight choosen for you:\n';
