@@ -28,7 +28,8 @@ curl_setopt($ch, CURLOPT_URL,$url);
 $content = curl_exec($ch);
 echo $content;
 //skyscanner
-
+$content = file_get_contents($url);
+echo $content;
 if($message == "Deneme"){
  $message_to_reply = 'Deneme başarılı.';
 }
