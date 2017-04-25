@@ -28,16 +28,14 @@ curl_setopt($ch, CURLOPT_URL,$url);
 $content = curl_exec($ch);
 echo $content;
 
-echo strlen($content);
-
 $obj = json_decode($content);
 
 $printObj = 'The flight choosen for you: \n';
 $printObj = 'Departure Airport: ' .$obj->Places[1]->Name . '\n';
 $printObj .= 'Arrival Airport: ' .$obj->Places[0]->Name . '\n';
 $printObj .= 'Date: ' .strtok($obj->Quotes[0]->OutboundLeg->DepartureDate , 'T') . '\n';
-$floatPrice = $obj->Quotes[0]->MinPrice * 2;
-$printObj .= 'Price: ' .$floatPrice . ' ' .$obj->Currencies[0]->Code . '\n';
+//$floatPrice = $obj->Quotes[0]->MinPrice * 2;
+$printObj .= 'Price: ' .$obj->Quotes[0]->MinPrice . ' ' .$obj->Currencies[0]->Code . '\n';
 $printObj .= 'Arrival Airport: ' .$obj->Places[0]->Name . '\n';
 $printObj .= 'Carrier: ' .$obj->Carriers[0]->Name . '\n';
 
@@ -46,7 +44,7 @@ $printObj .= 'Carrier: ' .$obj->Carriers[0]->Name . '\n';
 if($message == "Hello" || $message == "Hi"||$message == "hi" ||$message == "hello"){
  $message_to_reply = 'Hi. \nFor querying flights the format has to be like :\n22.06.2017, IST -> ESB, 2 adults';
 }
-elseif($sentences == 'Array'){
+elseif(strlen($content) != 0){
   $message_to_reply = $printObj;
 }
 else{
