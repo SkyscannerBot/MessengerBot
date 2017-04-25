@@ -37,20 +37,20 @@ $printObj = 'The flight choosen for you: \n';
 $printObj = 'Departure Airport: ' .$obj->Places[1]->Name . '\n';
 $printObj .= 'Arrival Airport: ' .$obj->Places[0]->Name . '\n';
 $printObj .= 'Date: ' .strtok($obj->Quotes[0]->OutboundLeg->DepartureDate , 'T') . '\n';
-$printObj .= 'Price: ' .$obj->Quotes[0]->MinPrice . ' ' .$obj->Currencies[0]->Code . '\n';
+$printObj .= 'Price: ' .((int)$obj->Quotes[0]->MinPrice * 2) . ' ' .$obj->Currencies[0]->Code . '\n';
 $printObj .= 'Arrival Airport: ' .$obj->Places[0]->Name . '\n';
 $printObj .= 'Carrier: ' .$obj->Carriers[0]->Name . '\n';
 
 
 //skyscanner
-if($message == "Hello" || $message == "Hi"){
- $message_to_reply = 'Hi. \n For querying flights the format has to be like :\n22.06.2017, IST -> ESB, 2 adults';
+if($message == "Hello" || $message == "Hi"||$message == "hi" ||$message == "hello"){
+ $message_to_reply = 'Hi. \nFor querying flights the format has to be like :\n22.06.2017, IST -> ESB, 2 adults';
 }
 elseif($sentences == 'Array'){
   $message_to_reply = $printObj;
 }
 else{
-  $message_to_reply = 'Format error. The format has to be like :\n22.06.2017, IST -> ESB, 2 adults';
+  $message_to_reply = 'Format error.\nFor querying flights the format has to be like :\n22.06.2017, IST -> ESB, 2 adults';
 }
 
 
