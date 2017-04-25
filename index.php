@@ -11,7 +11,7 @@ $hub_verify_token = $_REQUEST['hub_verify_token'];
 $input = json_decode(file_get_contents('php://input'), true);
 $sender = $input['entry'][0]['messaging'][0]['sender']['id'];
 $message = $input['entry'][0]['messaging'][0]['message']['text'];
-$message_to_reply = 'Mesela';
+$message_to_reply = ' ';
 
 //skyscanner
 $str = '22.06.2017, IST -> ESB, 2 adults';
@@ -31,7 +31,8 @@ echo $content;
 
 if($message == "Selam")
  $message_to_reply = 'Selammmmm';
-
+else if ($str == '22.06.2017, IST -> ESB, 2 adults')
+ $message_to_reply = 'Veri alındı.';
 $json = file_get_contents('http://partners.api.skyscanner.net/apiservices/browsequotes/v1.0/TR/try/en-US/ISTA-sky/ADB-sky/2017-04-12/2017-04-19?apikey=prtl6749387986743898559646983194');
 
 $obj = json_decode($json);
