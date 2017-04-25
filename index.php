@@ -16,7 +16,7 @@ $message_to_reply = ' ';
 //skyscanner
 //$str = '22.06.2017, IST -> ESB, 2 adults';
 
-$sentences = preg_split("/[\s,]+/", $str);
+$sentences = preg_split("/[\s,]+/", $message);
 
 $sentences2 = preg_split("/[\s.]+/", $sentences[0]);
 
@@ -37,7 +37,8 @@ $printObj = 'The flight choosen for you: \n';
 $printObj = 'Departure Airport: ' .$obj->Places[1]->Name . '\n';
 $printObj .= 'Arrival Airport: ' .$obj->Places[0]->Name . '\n';
 $printObj .= 'Date: ' .strtok($obj->Quotes[0]->OutboundLeg->DepartureDate , 'T') . '\n';
-$printObj .= 'Price: ' .$obj->Quotes[0]->MinPrice . ' ' .$obj->Currencies[0]->Code . '\n';
+$floatPrice = $obj->Quotes[0]->MinPrice * 2;
+$printObj .= 'Price: ' .$floatPrice . ' ' .$obj->Currencies[0]->Code . '\n';
 $printObj .= 'Arrival Airport: ' .$obj->Places[0]->Name . '\n';
 $printObj .= 'Carrier: ' .$obj->Carriers[0]->Name . '\n';
 
