@@ -30,8 +30,8 @@ echo $content;
 
 $obj = json_decode($content);
 
-$printObj = 'The flight choosen for you: \n';
-$printObj = 'Departure Airport: ' .$obj->Places[1]->Name . '\n';
+$printObj = 'The flight choosen for you:\n';
+$printObj .= 'Departure Airport: ' .$obj->Places[1]->Name . '\n';
 $printObj .= 'Arrival Airport: ' .$obj->Places[0]->Name . '\n';
 $printObj .= 'Date: ' .strtok($obj->Quotes[0]->OutboundLeg->DepartureDate , 'T') . '\n';
 //$floatPrice = $obj->Quotes[0]->MinPrice * 2;
