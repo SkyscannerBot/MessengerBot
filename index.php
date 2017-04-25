@@ -30,7 +30,7 @@ echo $content;
 $obj = json_decode($content);
 
 $printObj = 'The flight choosen for you:\n';
-if($obj->Places[0]->Name > $obj->Places[1]->Name){
+if($obj->Places[0]->IataCode > $obj->Places[1]->IataCode){
 $printObj .= 'Departure Airport: ' .$obj->Places[0]->Name . '\n';
 $printObj .= 'Arrival Airport: ' .$obj->Places[1]->Name . '\n';
 }
