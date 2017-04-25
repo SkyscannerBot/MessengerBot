@@ -29,6 +29,7 @@ $content = curl_exec($ch);
 echo $content;
 //skyscanner
 $decodedJson = json_decode($content);
+echo $decodedJson;
 //echo $decodedJson->{'Quotes'};
 if($message == "Deneme"){
  $message_to_reply = 'Deneme başarılı.';
