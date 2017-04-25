@@ -14,9 +14,9 @@ $message = $input['entry'][0]['messaging'][0]['message']['text'];
 $message_to_reply = ' ';
 
 //skyscanner
-//$str = '22.06.2017, IST -> ESB, 2 adults';
+$str = '22.06.2017, IST -> ESB, 2 adults';
 
-$sentences = preg_split("/[\s,]+/", $message);
+$sentences = preg_split("/[\s,]+/", $str);
 
 $sentences2 = preg_split("/[\s.]+/", $sentences[0]);
 
@@ -28,8 +28,7 @@ curl_setopt($ch, CURLOPT_URL,$url);
 $content = curl_exec($ch);
 echo $content;
 //skyscanner
-$content = file_get_contents($url);
-echo $content;
+
 if($message == "Deneme"){
  $message_to_reply = 'Deneme başarılı.';
 }
