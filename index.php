@@ -29,7 +29,7 @@ $content = curl_exec($ch);
 echo $content;
 
 $obj = json_decode($content);
-echo $obj->Quotes[0];
+echo $obj->Quotes[0]->MinPrice;
 //echo $json;
 
 
