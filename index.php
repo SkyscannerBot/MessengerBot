@@ -14,8 +14,9 @@ $message = $input['entry'][0]['messaging'][0]['message']['text'];
 $message_to_reply = ' ';
 
 //skyscanner
-$str = '22.06.2017, IST -> ESB, 2 adults';
-$sentences = preg_split("/[\s,]+/", $str);
+//$str = '22.06.2017, IST -> ESB, 2 adults';
+
+$sentences = preg_split("/[\s,]+/", $message);
 
 $sentences2 = preg_split("/[\s.]+/", $sentences[0]);
 
@@ -28,14 +29,11 @@ $content = curl_exec($ch);
 echo $content;
 //skyscanner
 
-if($message == "Selam"){
- $message_to_reply = 'Selammmmm';
-}
-elseif ($message == '22.06.2017, IST -> ESB, 2 adults'){
- $message_to_reply = $message;
+if($message == "Deneme"){
+ $message_to_reply = 'Deneme başarılı.';
 }
 else{
-  $message_to_reply = 'Olmadı yar.';
+  $message_to_reply = $content;
 }
 $json = file_get_contents('http://partners.api.skyscanner.net/apiservices/browsequotes/v1.0/TR/try/en-US/ISTA-sky/ADB-sky/2017-04-12/2017-04-19?apikey=prtl6749387986743898559646983194');
 
